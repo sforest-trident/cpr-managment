@@ -1,0 +1,180 @@
+
+/* Import custom fonts -- */
+@import "https://use.typekit.net/tag7cjf.css";
+
+:root{
+    --e-color-primary: #6AC5D6;
+    --e-color-common: #15152B;
+    --e-font-family-common: 'museo-sans';
+    --e-font-weight-common: 300;
+    --e-font-family-heading: var(--e-font-family-common);
+    --e-font-weight-heading: 500;
+    --e-body-text-color: #fff;
+    --e-body-font-size: 16px;
+}
+
+body{
+    background-color: var(--e-color-common);
+    color: var(--e-body-text-color);
+    margin: unset;
+    padding: unset;
+
+    font-family: var(--e-font-family-common);
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header{
+    background-color: var(--e-color-primary);
+    padding: 1rem;
+    text-align: center;
+
+    ul{
+        list-style: none;
+        margin: unset;
+        padding: unset;
+
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        @media(max-width:767px) {
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        @media(min-width:767px) {
+            gap: 2rem;
+        }
+
+        li{
+            position: relative;
+            display: flex;
+            font-family: var(--e-font-family-heading);
+            color: var(--e-color-common);
+            text-transform: uppercase;
+
+
+            &:before{
+                content: '•';
+                display: block;
+                padding-bottom: 0.25rem;
+                
+                color: var(--e-body-text-color);
+            }
+
+            &:first-of-type{
+                &:before{
+                    display: none;
+                }
+            }
+
+            @media(max-width:767px) {
+                flex-direction: column;
+                
+            }
+
+            @media(min-width:767px) {
+                padding-top: unset;
+                padding-left: 2rem;
+                gap: 1rem;
+                font-size: clamp(18px, 1.5vw, 35px);
+                align-items: center;
+
+                &:before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.container{
+    max-width: 1200px;
+    margin:auto;
+    padding: 0 5vw;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: 100%;
+    flex-grow: 1;
+
+    .container{
+        height: 100%;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    h1{
+        img{
+            max-width: 100%;
+        }
+    }
+
+    .contact-details{
+        display: flex;
+        list-style: none;
+        margin: unset;
+        padding: unset;
+        gap: 2rem;
+
+        @media(max-width:767px) {
+            flex-direction: column;
+        }
+
+        li{
+            display: block;
+
+            @media(min-width:767px) {
+                font-size: clamp(18px, 1.5vw, 35px);
+            }
+
+            a{
+                display: block;
+                background-color: var(--e-color-primary);
+                color: var(--e-color-common);
+                padding: 1rem 3vw;
+                border-radius: 3rem;
+                white-space: nowrap;
+                text-decoration: none;
+                transition: background-color ease 0.2s;
+
+                &:hover,
+                &:focus{
+                    background-color: var(--e-body-text-color);
+                }
+            }
+        }
+    }
+
+
+    .no-show{
+        display: none;
+    }
+
+    .notice{
+        font-size: 10vw;
+        text-transform: uppercase;
+        padding: 2rem 0 4rem;
+        margin: unset;
+        font-weight: 900;
+
+        @media(max-width:767px) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @media(min-width:767px) {
+            font-size: clamp(20px, 6vw, 140px);
+        }
+    }
+}        
